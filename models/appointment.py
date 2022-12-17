@@ -1,8 +1,8 @@
 class Appointment:
-    def __init__(self, client, stylist, appointment_time_date, id = None):
+    def __init__(self, client, stylist, date_time, id = None):
         self.client = client
         self.stylist = stylist 
-        self.appointment_time_date = appointment_time_date
+        self.date_time = date_time
         self.id = id
 
 

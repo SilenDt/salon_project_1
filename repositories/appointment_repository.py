@@ -9,8 +9,8 @@ import repositories.client_repository as client_repository
 import repositories.stylist_repository as stylist_repository
 
 def save(appointment):
-    sql = "INSERT INTO appointments (client_id, stylist_id, appointment_time_date) VALUES (%s, %s, %s) RETURNING id"
-    values = [appointment.client.id, appointment.stylist.id, appointment.appointment_time_date]
+    sql = "INSERT INTO appointments (client_id, stylist_id, date_time) VALUES (%s, %s, %s) RETURNING id"
+    values = [appointment.client.id, appointment.stylist.id, appointment.date_time]
     results = run_sql(sql, values)
     id = results[0]['id']
     appointment.id = id

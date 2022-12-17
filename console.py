@@ -1,4 +1,4 @@
-import pdb
+
 
 from models.stylist import Stylist
 import repositories.stylist_repository as stylist_repository
@@ -28,7 +28,6 @@ client_3 = Client("Sally Smith", "7986443232")
 client_repository.save(client_3)
 
 #appointments:
-appointment_1 = Appointment(client.id, stylist.id,"Wednesday, 1:00pm")
+appointment_1 = Appointment(client_1, stylist_2, "Wednesday, 1:00pm")
 appointment_repository.save(appointment_1)
 
-pdb.set_trace()
