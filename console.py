@@ -37,8 +37,8 @@ appointment_1 = Appointment(client_1, stylist_2, "Monday, 1:00pm")
 appointment_repository.save(appointment_1)
 
 appointment_2 = Appointment(client_2, stylist_1, "Tuesday, 3:00pm")
-appointment_repository.save(appointment_1)
+appointment_repository.save(appointment_2)
 
 appointment_3 = Appointment(client_3, stylist_3, "Wednesday, 12:30pm")
-appointment_repository.save(appointment_1)
+appointment_repository.save(appointment_3)
 

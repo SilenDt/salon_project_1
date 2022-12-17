@@ -7,3 +7,12 @@ def save(stylist):
     results = run_sql(sql, values)
     id = results[0]['id']
     stylist.id = id
+
+def select_all():
+    stylists = []
+    sql = "SELECT * FROM stylists"
+    results = run_sql(sql)
+    for result in results:
+        stylist = Stylist(result["name"], result["id"])
+        stylists.append(stylist)
+    return stylists

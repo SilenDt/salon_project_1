@@ -7,3 +7,12 @@ def save(client):
     results = run_sql(sql, values)
     id = results[0]['id']
     client.id = id
+
+def select_all():
+    clients = []
+    sql = "SELECT * FROM clients"
+    results = run_sql(sql)
+    for result in results:
+        client = Client(result["name"], result["phone_number"],result[id])
+        clients.append(client)
+    return clients

@@ -9,3 +9,4 @@ clients_blueprint = Blueprint("clients", __name__)
 def stylists():
     clients = client_repository.select_all()
     return render_template("clients/index.html")
+
