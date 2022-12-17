@@ -22,7 +22,7 @@ def salect_all():
     for result in results:
         client = client_repository.select(result["client_id"])
         stylist = stylist_repository.select(result["stylist_id"])
-        appointment = Appointment(client, stylist, result["id"])
+        appointment = Appointment(client, stylist, appointment.time_date, result["id"])
         appointments.append(appointment)
     return appointments
 
@@ -46,4 +46,9 @@ def delete_all():
 def delete(id):
     sql = "DELETE FROM appointments WHERE is = %s"
     values = [id]
+    run_sql(sql, values)
+
+def update(appointment):
+    sql = "UPDATE appointments SET (client_id, appointment_id, time_date) = (%s, %s, %s) WHERE id = %s"
+    values = [appointment.client.id, appointment.stylist.id, appointment.time_date, appointment.id]
     run_sql(sql, values)
