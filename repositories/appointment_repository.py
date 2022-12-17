@@ -28,3 +28,8 @@ def salect_all():
 def delete_all():
     sql = "DELETE FROM appointments"
     run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM appointments WHERE is = %s"
+    values = [id]
+    run_sql(sql, values)

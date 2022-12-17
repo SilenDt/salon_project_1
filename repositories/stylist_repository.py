@@ -20,3 +20,8 @@ def select_all():
 def delete_all():
     sql = "DELETE FROM stylists"
     run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM stylists WHERE is = %s"
+    values = [id]
+    run_sql(sql, values)
