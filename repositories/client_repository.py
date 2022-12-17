@@ -35,3 +35,7 @@ def delete(id):
     sql = "DELETE FROM clients WHERE is = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(client):
+    sql = "UPDATE clients SET name = %s WHERE id = %s"
+    values = [client.name, client.id]
