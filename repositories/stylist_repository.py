@@ -16,3 +16,7 @@ def select_all():
         stylist = Stylist(result["name"], result["id"])
         stylists.append(stylist)
     return stylists
+
+def delete_all():
+    sql = "DELETE FROM stylists"
+    run_sql(sql)
