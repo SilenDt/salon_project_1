@@ -17,6 +17,16 @@ def select_all():
         stylists.append(stylist)
     return stylists
 
+def select(id):
+    stylist = None
+    sql = "SELECT * FROM stylits WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        stylist = Stylist(result["name"], result["id"])
+    return stylist
+
 def delete_all():
     sql = "DELETE FROM stylists"
     run_sql(sql)

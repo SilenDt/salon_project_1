@@ -24,6 +24,20 @@ def salect_all():
         stylist = stylist_repository.select(result["stylist_id"])
         appointment = Appointment(client, stylist, result["id"])
         appointments.append(appointment)
+    return appointments
+
+def select(id):
+    appointment = None
+    sql = "SELECT * FROM appointments WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        client = client_repository.select(result["client_id"])
+        stylist = stylist_repository.select(result["stylist_id"])
+        appointment = Appointment(client, stylist, result["id"])
+    return appointment
+
 
 def delete_all():
     sql = "DELETE FROM appointments"
