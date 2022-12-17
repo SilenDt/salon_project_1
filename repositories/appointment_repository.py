@@ -14,3 +14,13 @@ def save(appointment):
     results = run_sql(sql, values)
     id = results[0]['id']
     appointment.id = id
+
+def salect_all():
+    appointments = []
+    sql = "SELECT * FROM appointments"
+    results = run_sql(sql)
+    for result in results:
+        client = client_repository.select(result["client_id"])
+        stylist = stylist_repository.select(result["stylist_id"])
+        appointment = Appointment(client, stylist, result["id"])
+        appointments.append(appointment)
