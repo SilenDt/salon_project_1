@@ -7,9 +7,9 @@ import repositories.client_repository as client_repository
 from models.appointment import Appointment
 import repositories.appointment_repository as appointment_repository
 
-# stylist_repository.delete_all()
-# client_repository.delete_all()
-# appointment_repository.delete_all()
+stylist_repository.delete_all()
+client_repository.delete_all()
+appointment_repository.delete_all()
 
 
 #stylists:

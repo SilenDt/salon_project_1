@@ -6,11 +6,13 @@ import repositories.stylist_repository as stylist_repository
 
 stylists_blueprint = Blueprint("stylists", __name__)
 
+#index
 @stylists_blueprint.route("/stylists")
 def stylists():
-    stylists = stylist_repository.select_all()
-    return render_template("stylists/index.html")
+    stylists_list = stylist_repository.select_all()
+    return render_template("stylists/index.html", stylist=stylists_list)
 
+#update
 def update(stylist):
     sql = "UPDATE stylists SET name = %s WHERE id = %s"
     values = [stylist.name, stylist.phone_number,stylist.id]

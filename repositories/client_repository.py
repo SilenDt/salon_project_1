@@ -13,7 +13,7 @@ def select_all():
     sql = "SELECT * FROM clients"
     results = run_sql(sql)
     for result in results:
-        client = Client(result["name"], result["phone_number"],result[id])
+        client = Client(result["name"], result["phone_number"],result["id"])
         clients.append(client)
     return clients
 
