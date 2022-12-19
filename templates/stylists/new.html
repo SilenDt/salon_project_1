@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<h2>Add New Stylist</h2>
+
+<form action="/stylists" method="POST">
+    <label for="name">NAME:</label>
+    <input type="text" id="name" name="name">
+    <input type="submit">
+</form>
+
+
+
+{% endblock%}
