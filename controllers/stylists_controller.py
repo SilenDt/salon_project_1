@@ -9,8 +9,8 @@ stylists_blueprint = Blueprint("stylists", __name__)
 #index
 @stylists_blueprint.route("/stylists")
 def stylists():
-    stylists_list = stylist_repository.select_all()
-    return render_template("stylists/index.html", stylist=stylists_list)
+    stylists = stylist_repository.select_all()
+    return render_template("stylists/index.html", stylist=stylists)
 
 #update
 def update(stylist):

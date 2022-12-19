@@ -19,7 +19,7 @@ def select_all():
 
 def select(id):
     stylist = None
-    sql = "SELECT * FROM stylits WHERE id = %s"
+    sql = "SELECT * FROM stylists WHERE id = %s"
     values = [id]
     results = run_sql(sql, values)
     if results:
