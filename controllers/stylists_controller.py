@@ -12,6 +12,26 @@ def stylists():
     stylists = stylist_repository.select_all()
     return render_template("stylists/index.html", stylist=stylists)
 
+#New
+@stylists_blueprint.route("/stylists/new")
+def new_stylist():
+    return render_template("stylists/new.html" )
+
+#create
+@stylists_blueprint.route("/stylists", methods=["POST"])
+def create_stylist():
+    name = request.form["name"]
+    new_stylist = Stylist(name)
+    stylist_repository.save(new_stylist)
+    return redirect("/stylists")
+
+#delete
+@stylists_blueprint.route("/stylists/<id>/delete", methods=["POST"])
+def delete_stylist(id):
+    stylist_repository.delete(id)
+    return redirect("/stylists")
+
+
 #update
 def update(stylist):
     sql = "UPDATE stylists SET name = %s WHERE id = %s"
