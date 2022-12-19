@@ -15,7 +15,7 @@ def stylists():
 #New
 @stylists_blueprint.route("/stylists/new")
 def new_stylist():
-    return render_template("stylists/new.html" )
+    return render_template("stylists/new.html")
 
 #create
 @stylists_blueprint.route("/stylists", methods=["POST"])
