@@ -17,6 +17,6 @@ def appointments():
 #New
 @appointments_blueprint.route("/appointments/new")
 def new_appointment():
-    client = client_repository.select_all()
-    stylist = stylist_repository.select_all()
-    return render_template("appointments/new.html", clients=clients, stylists=stylists, 
+    clients = client_repository.select_all()
+    stylists = stylist_repository.select_all()
+    return render_template("appointments/new.html", clients=clients, stylists=stylists)
