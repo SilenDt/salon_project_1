@@ -13,3 +13,10 @@ appointments_blueprint = Blueprint("appointments", __name__)
 def appointments():
     appointments = appointment_repository.select_all()
     return render_template("appointments/index.html", appointments=appointments)
+
+#New
+@appointments_blueprint.route("/appointments/new")
+def new_appointment():
+    client = client_repository.select_all()
+    stylist = stylist_repository.select_all()
+    return render_template("appointments/new.html", clients=clients, stylists=stylists, 
