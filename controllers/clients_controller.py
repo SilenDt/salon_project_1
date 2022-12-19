@@ -28,6 +28,6 @@ def create_client():
 
 #delete
 @clients_blueprint.route("/clients/<id>/delete", methods=["POST"])
-def delete_human(id):
+def delete_client(id):
     client_repository.delete(id)
     return redirect("/clients")

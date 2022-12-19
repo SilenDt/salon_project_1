@@ -16,6 +16,6 @@ CREATE TABLE stylists (
 CREATE TABLE appointments (
     id SERIAL PRIMARY KEY,
     date_time VARCHAR,
-    client_id SERIAL NOT NULL REFERENCES clients(id),
-    stylist_id SERIAL NOT NULL REFERENCES stylists(id)
+    client_id SERIAL NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
+    stylist_id SERIAL NOT NULL REFERENCES stylists(id) ON DELETE CASCADE
 );
