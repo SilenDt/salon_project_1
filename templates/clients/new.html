@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<h2>Add New Client</h2>
+
+<form action="/clients" method="POST">
+    <label for="name">NAME:</label>
+    <input type="text" id="name" name="name">
+    <label for="phone number">Phone Number:</label>
+    <input type="text" id="phone number" name="phone_number">
+    <input type="submit">
+</form>
+
+
+
+{% endblock%}
