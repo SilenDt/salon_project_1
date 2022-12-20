@@ -6,22 +6,29 @@
 <form action="/appointments" method="POST">
 
 </form>
-<label for="client">Client:</label>
-<select name="client_id" id="client">
-    {% for client in clients %}
-    <option value="{{ client.id }}">
-        {{ client.name }}
-    </option>
-    {% endfor %}
-</select>
+    <label for="client">Client:</label>
 
-<label for="stylist">Stylist:</label>
-<select name="stylist_id" id="stylist">
-    {% for stylist in stylists %}
-    <option value="{{ stylist.id }}">
-        {{ stylist.name }}
-    </option>
-    {% endfor %}
+    <select name="client_id" id="client">
+        {% for client in clients %}
+        <option value="{{ client.id }}">
+            {{ client.name }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <label for="stylist">Stylist:</label>
+
+    <select name="stylist_id" id="stylist">
+        {% for stylist in stylists %}
+        <option value="{{ stylist.id }}">
+            {{ stylist.name }}
+            </option>
+            {% endfor %}
+    </select>
+
+    <label for="date_time">Date/Time:</label>
+    <input type="text" id="date_time" name="date_time">
+
     <input type="submit">
 </form>
 

@@ -23,7 +23,7 @@ def select_all():
         client = client_repository.select(result["client_id"])
         stylist = stylist_repository.select(result["stylist_id"])
         appointment = Appointment(client, stylist, result["date_time"], result["id"])
-        appointments.append(appointment)
+        appointments.append(appointment)    
     return appointments
 
 def select(id):
