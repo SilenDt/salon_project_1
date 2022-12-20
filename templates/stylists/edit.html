@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update Stylist Information</h2>
+
+<form action="/stylists/{{ stylist.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ stylist.name }}">
+        
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

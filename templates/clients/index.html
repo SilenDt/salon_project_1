@@ -8,7 +8,7 @@
 {% for client in clients %}
 
 <p>{{ client.name }}</p>
-   <a href="/clients/{{ client.id }}/edit"></a>
+<a href="/clients/{{ client.id }}/edit"></a>
     <form action="/clients/{{ client.id }}/delete" method="POST">
         <input type="submit" value="Delete">
     </form>

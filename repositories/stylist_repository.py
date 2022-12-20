@@ -40,3 +40,5 @@ def update(stylist):
     sql = "UPDATE stylists SET name = %s WHERE id = %s"
     values = [stylist.name, stylist.id]
     run_sql(sql, values)
+
+    

@@ -12,5 +12,8 @@
     <form action="/stylists/{{ stylist.id }}/delete" method="POST">
         <input type="submit" value="Delete">
     </form>
+
+<a href="stylists/{{ stylist.id }}/edit">Update Stylist</a>
+
 {% endfor %}
 {% endblock%}
