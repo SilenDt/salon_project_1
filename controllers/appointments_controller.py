@@ -29,7 +29,18 @@ def create_appointment():
     date_time = request.form["date_time"]
     client = client_repository.select(client_id)
     stylist = stylist_repository.select(stylist_id)
-    date_time = appointment_repository.select("date_time")
     new_appointment = Appointment(client, stylist, date_time)
     appointment_repository.save(new_appointment)
+    return redirect("/appointments")
+
+# UPDATE
+@appointments_blueprint.route("/appointments/<id>", methods=["POST"])
+def update_appointment(id):
+    client_id = request.form["client_id"]
+    stylist_id = request.form["stylist_id"]
+    date_time = request.form["date_time"]
+    client = client_repository.select(client_id)
+    stylist = stylist_repository.select(stylist_id)
+    appointment = Appointment(client, stylist, id)
+    appointment_repository.update(appointment)
     return redirect("/appointments")

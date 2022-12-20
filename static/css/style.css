@@ -1,5 +1,49 @@
-nav > ul > li {
+h1 {
+    font-family: cursive;
+    text-align: center;
+    color: rgb(234, 9, 181);
+    font-size: 40px;
+}
+
+html {
+    background: url("images/logo_template.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 90%;
+    overflow: hidden;
+}
+
+body {
+    font-family: cursive;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    gap: 1rem;
+    margin-top: 13rem;
+    margin-left: 10rem;
+    font-family: cursive;
+    font-size: 20px;
+}
+
+.home_page_image {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    ;  
+}
+
+.home_image {
     display: flex;
     justify-content: center;
-    
+    width: 25%;
+    height: auto;
+}
+
+.add_stylist_button {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
 }
