@@ -14,6 +14,7 @@
     </option>
     {% endfor %}
 </select>
+
 <label for="stylist">Stylist:</label>
 <select name="stylist_id" id="stylist">
     {% for stylist in stylists %}
@@ -21,6 +22,7 @@
         {{ stylist.name }}
     </option>
     {% endfor %}
+    <input type="submit">
 </form>
 
 
