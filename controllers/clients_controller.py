@@ -26,6 +26,21 @@ def create_client():
     client_repository.save(new_client)
     return redirect("/clients")
 
+#edit
+@clients_blueprint.route("/clients/<id>/edit")
+def edit_client(id):
+    client = client_repository.select(id)
+    return render_template('clients/edit.html', client=client)
+
+# update
+@clients_blueprint.route("/clients/<id>", methods=["POST"])
+def update_client(id):
+    name = request.form["name"]
+    phone_number = request.form["phone_number"]
+    client = Client(name, phone_number, id)
+    client_repository.update(client)
+    return redirect("/clients")
+
 #delete
 @clients_blueprint.route("/clients/<id>/delete", methods=["POST"])
 def delete_client(id):

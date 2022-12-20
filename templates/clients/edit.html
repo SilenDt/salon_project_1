@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update Client Information</h2>
+
+<form action="/clients/{{ client.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ client.name }}">
+        <label for="name">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" value="{{ client.phone_number }}">
+        
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}
