@@ -1,46 +1,55 @@
-h1 {
+* {
+    border: 2px solid red;
     font-family: cursive;
-    text-align: center;
-    color: rgb(234, 9, 181);
-    font-size: 40px;
 }
 
 html {
+    display: flex;
     background: url("images/logo_template.png") no-repeat center center fixed;
     background-size: cover;
     height: 90%;
+    overflow: hidden;
+    background-position: bottom center;
 }
 
 body {
-    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    border-color: blue;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    margin:auto;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    border-color: aqua;
+    margin: auto;
 }
 
 nav ul {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    margin: auto;
+    /* justify-content: center;
     list-style-type: none;
     gap: 3rem;
-    margin-top: 13rem;
-    margin-left: 7rem;
     font-family: cursive;
     font-size: 20px;
+    border-color: orange */
 }
 
-.home_page_image {
+nav ul li {
     display: flex;
-    flex-direction: center;
-    justify-content: center;
-    ;  
+    margin: auto;
 }
 
-.home_image {
-    display: flex;
-    justify-content: center;
-    width: 25%;
-    height: auto;
-}
 
-.stylist_list {
-    text-align: center;
-}
+
+
+
+
+

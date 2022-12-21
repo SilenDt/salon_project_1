@@ -1,20 +1,23 @@
 {% extends "base.html" %}
 {% block content %} 
 
-<section class="stylist_list">
-    <a href="stylists/new">Add Stylist</a>
+<button class="add_stylist_button"><a href="stylists/new">Add Stylist</a></button>
 
-    <h2>Stylists</h2>
-
+<section class="stylist_block">
+    <h2>Stylists:</h2>
+    
     {% for stylist in stylists %}
-
-    <p>{{ stylist.name }}</p>
+    <p class="stylist_name">*{{ stylist.name }}*</p>
+    
     <a href="/stylists/{{ stylist.id }}/edit"></a>
-        <form action="/stylists/{{ stylist.id }}/delete" method="POST">
+            <form action="/stylists/{{ stylist.id }}/delete" method="POST">
             <input type="submit" value="Delete">
-        </form>
+            </form>
     <a href="stylists/{{ stylist.id }}/edit">Update Stylist</a>
 
-{% endfor %}
+    {% endfor %}
 </section>
+
+
+
 {% endblock%}
