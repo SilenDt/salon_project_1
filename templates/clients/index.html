@@ -1,20 +1,25 @@
 {% extends "base.html" %}
 {% block content %} 
 
-<a href="clients/new">Add Client</a>
+<div class="box-container">
+<button><a href="clients/new">Add Client</a></button>
 
-<h2>Clients</h2>
+<h2 class="page-title">Clients:</h2>
 
-{% for client in clients %}
+    {% for client in clients %}
+    
+    <div class="name-box">
+        
+        <p class="name">*{{ client.name }}*<br>*{{ client.phone_number }}</p>
+        <a href="/clients/{{ client.id }}/edit"></a>
 
-<p>{{ client.name }}</p>
-<a href="/clients/{{ client.id }}/edit"></a>
-    <form action="/clients/{{ client.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-    <a href="clients/{{ client.id }}/edit">Update Client</a>
-
-
-
-{% endfor %}
+            
+        <form action="/clients/{{ client.id }}/delete" method="POST">
+            <input type="submit" value="Delete">
+            </form>
+            <a href="clients/{{ client.id }}/edit">Update Client</a>
+        {% endfor %}
+    </div>
+</div>
+    
 {% endblock%}

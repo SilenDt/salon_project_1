@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %} 
 
-<a href="appointments/new">Add Appointment</a>
+<button><a href="appointments/new">Add Appointment</a></button>
 
-<h2>Appointments</h2>
+<h2 class="page-title">Appointments</h2>
 
 {% for appointment in appointments %}
-
-<p>{{ appointment.date_time }}</p>
-
+<div class="box-container">
+    <p>{{ appointment.date_time }}</p>
+</div>
 
 {% endfor %}
 {% endblock %}

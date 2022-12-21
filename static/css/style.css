@@ -1,50 +1,63 @@
 * {
-    border: 2px solid red;
     font-family: cursive;
 }
 
 html {
-    display: flex;
     background: url("images/logo_template.png") no-repeat center center fixed;
     background-size: cover;
     height: 90%;
-    overflow: hidden;
-    background-position: bottom center;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    border-color: blue;
-    margin: auto;
+h2 {
+    text-decoration: underline;
 }
 
+h2.page-title {
+    display: grid;
+    justify-content: center;
+}
+.box-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-color: purple;
+}
+
+.name-box {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+p.name {
+    text-decoration: underline;
+    color: blueviolet;
+}
 header {
+    margin-top: 15rem;
+}
+
+.header-container {
     display: flex;
-    margin:auto;
+}
+
+.nav-container {
+    display: flex;
+    align-items: flex-end;
+    align-items: stretch;
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    border-color: aqua;
-    margin: auto;
-}
-
-nav ul {
-    display: flex;
-    margin: auto;
-    /* justify-content: center;
-    list-style-type: none;
-    gap: 3rem;
-    font-family: cursive;
-    font-size: 20px;
-    border-color: orange */
+    margin-left: 30rem;
 }
 
 nav ul li {
-    display: flex;
-    margin: auto;
+    display: inline-flex;
+    
+}
+
+h2.background-lightblue {
+    background-color: lightskyblue;
 }
 
 

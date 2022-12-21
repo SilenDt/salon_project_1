@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% block content %} 
 
-<button class="add_stylist_button"><a href="stylists/new">Add Stylist</a></button>
+<div class="box-container"></div>
+<button><a href="stylists/new">Add Client</a></button>
 
-<section class="stylist_block">
-    <h2>Stylists:</h2>
+<h2 class="page-title">Stylists:</h2>
     
     {% for stylist in stylists %}
-    <p class="stylist_name">*{{ stylist.name }}*</p>
     
-    <a href="/stylists/{{ stylist.id }}/edit"></a>
-            <form action="/stylists/{{ stylist.id }}/delete" method="POST">
+    <div class="name-box">
+        <p class="name">*{{ stylist.name }}*</p>
+        <a href="/stylists/{{ stylist.id }}/edit"></a>
+            
+        <form action="/stylists/{{ stylist.id }}/delete" method="POST">
             <input type="submit" value="Delete">
             </form>
-    <a href="stylists/{{ stylist.id }}/edit">Update Stylist</a>
-
-    {% endfor %}
-</section>
-
-
+            <a href="stylists/{{ stylist.id }}/edit">Update Stylist</a>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock%}
